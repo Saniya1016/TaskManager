@@ -8,3 +8,20 @@
     padding: 20px;
     color: rgb(0, 191, 255);
 }
+
+.main {
+    padding: 100px 0;
+}
+
+button {
+    font-size: 18px;
+    padding: 12px 24px;
+    background-color: #39a728;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #218838;
+  }

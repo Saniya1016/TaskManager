@@ -2,8 +2,8 @@ import React, {useState, useEffect} from "react";
 import './login.css';
 
 export const Login = () =>  {
-    const [username, setUsername] = useState("");
-    const [pwd, setPwd] = useState("");
+    const [username, setUsername] = useState(localStorage.getItem("username") || "");
+    const [pwd, setPwd] = useState(localStorage.getItem("pwd")  || "");
 
     //change name on key up event
     const handleNameChange = (event) => {
@@ -15,7 +15,10 @@ export const Login = () =>  {
         setPwd(e.target.value);
     }
 
+    //put stuff into local storage
     useEffect(() => {
+        localStorage.setItem("username", username);
+        localStorage.setItem("pwd", pwd);
         console.log(username);
         console.log(pwd);
     }, [username, pwd]);
@@ -39,6 +42,9 @@ export const Login = () =>  {
                     value={pwd}
                     onChange={handlePasswordChange}
                 />
+                <main className="main">
+                    <button>Log in</button>
+                </main>
             </div>
         </div>
     );
