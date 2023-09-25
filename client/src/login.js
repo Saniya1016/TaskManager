@@ -1,7 +1,11 @@
 import React, {useState, useEffect} from "react";
+// import {useHistory} from 'react-router-dom';
 import './login.css';
 
 export const Login = () =>  {
+
+    // const history = useHistory();
+
     const [username, setUsername] = useState(localStorage.getItem("username") || "");
     const [pwd, setPwd] = useState(localStorage.getItem("pwd")  || "");
 
@@ -22,6 +26,10 @@ export const Login = () =>  {
         console.log(username);
         console.log(pwd);
     }, [username, pwd]);
+
+    const handleLogin = () => {
+        // history.push('/home');
+    }
 
     return (
         <div className="login-page">
