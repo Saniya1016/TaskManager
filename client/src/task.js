@@ -1,6 +1,7 @@
-class Task{
+export class Task{
 
-    constructor(name, description, difficulty, due_date){
+    constructor(id, name, description, difficulty, due_date){
+        this.id = id;
         this.name = name;
         this.description = description;
         this.difficulty = difficulty;
@@ -8,6 +9,7 @@ class Task{
         this.priority = 0;
     }
 
+    getId = ()  => this.id;
     getName = () => this.name;
     getDescription = () => this.description;
     getDifficulty = () => this.difficulty;
@@ -25,13 +27,14 @@ class Task{
     }
 }
 
+
 // ===== TESTING ==== //
 
-// let t1 = new Task("project1", "CS576 Project", 3, 36);
-// let t2 = new Task("project2", "CS426 task", 1, 35);
+let t1 = new Task(1, "project1", "CS576 Project", 3, 36);
+let t2 = new Task(2, "project2", "CS426 task", 1, 35);
 
-// t1.setPriority();
-// t2.setPriority();
+t1.setPriority();
+t2.setPriority();
 
-// console.log(t1.getPriority());
-// console.log(t2.getPriority());
+console.log(t1.getPriority());
+console.log(t2.getPriority());
