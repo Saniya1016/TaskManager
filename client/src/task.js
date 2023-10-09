@@ -16,6 +16,22 @@ export class Task{
     getDate = () => this.due_date;
     getPriority = () => this.priority;
 
+    setName = (name) => {
+        this.name = name;
+    }
+
+    setDescription = (desc) => {
+        this.description = desc;
+    }
+
+    setDifficulty = (diff) => {
+        this.difficulty = diff;
+    }
+
+    setDate = (date) =>{
+        this.due_date = date;
+    }
+
     //higher val = higher priority or more -ve = lower priority
     setPriority = () => {
         const ddw = -1.5;
