@@ -2,7 +2,7 @@ import { Heap } from "heap-js";
 // import { Task } from './task.js';
 
 
-export class Table{
+class Table{
 
     constructor(){
         this.queue = new Heap((a, b) => b.priority - a.priority);
@@ -16,7 +16,7 @@ export class Table{
         this.map[task.getId()] = task;
     }
 
-    view_tasks = () =>{
+    view_tasks = () => {
         let clone_arr = [];
         let temp_arr = this.queue.toArray();
         for(let i = 0; i < temp_arr.length; ++i){
@@ -31,7 +31,7 @@ export class Table{
         this.queue.remove(task_remove);
         task_remove.setName(name);
         this.queue.push(task_remove);
-        this.map[id] = task_remove
+        this.map[id] = task_remove;
     }
 
     update_difficulty = (id, diff) => {
@@ -40,7 +40,7 @@ export class Table{
         task_remove.setDifficulty(diff);
         task_remove.setPriority();
         this.queue.push(task_remove);
-        this.map[id] = task_remove
+        this.map[id] = task_remove;
     }
 
     update_date = (id, date) => {
@@ -49,16 +49,20 @@ export class Table{
         task_remove.setDate(date);
         task_remove.setPriority();
         this.queue.push(task_remove);
-        this.map[id] = task_remove
+        this.map[id] = task_remove;
     }
 
     delete = (id) => {
         let task_remove = this.map[id];
         this.queue.remove(task_remove);
-        delete this.map[id]
+        delete this.map[id];
     }
 
 }
+
+let table = new Table();
+
+export default table;
 
 
 // let t1 = new Task(1, "project1", "CS576 Project", 3, 36);
